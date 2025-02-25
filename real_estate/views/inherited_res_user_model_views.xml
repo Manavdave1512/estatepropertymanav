@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="res_users_view_form" model="ir.ui.view">
+        <field name="name">res.users.view.form.inherit.gamification</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <notebook>
+              <page string="real estate properties">
+                <field name="property_ids">
+                <list string="Channel" decoration-success="state=='offerrecieved'" decoration-muted="state=='sold'" decoration-bf="state=='offerAccepted'"> 
+                <field name="name"/>
+                <field name="description"/>
+                
+                <field name="postcode"/>
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                <field name="date_availability" optional="hide"/>
+                <field name="expected_price"/>
+                <field name="selling_price"/>
+                <field name="bedrooms"/>
+                <field name="living_area"/>
+                
+                
+                <field name="facades"/>
+                <field name="garage"/>
+                <field name="garden"/>
+                <field name="garden_area"/>
+                <field name="garden_orientation"/>
+                <field name="state"/>
+                <field name="active"/>
+                <field name="total_area"/>
+                </list>
+                </field>
+              </page>
+            </notebook>
+        </field>
+    </record>
+
+
+</odoo>

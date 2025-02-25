@@ -1,0 +1,1 @@
+from . import estate_acc_property

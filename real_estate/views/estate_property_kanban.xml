@@ -1,0 +1,28 @@
+<odoo>
+   
+
+  <record id="real_estate_kanban" model="ir.ui.view">
+  
+        <field name="name">Test56</field>
+        <field name="model">real_estate</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="property_type_id">
+              <templates>
+                 <t t-name="kanban-box">
+                  <div>
+                   <field name="name"/>
+                   <br/>
+                  Expected Price : <field name="expected_price" />
+                   <br/>
+                 Best offer:  <field name="best_price" />
+                   <br/>
+                  selling price: <field name="selling_price" />    
+                   <br/>
+                   <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                  </div>
+                  </t>
+               </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>
