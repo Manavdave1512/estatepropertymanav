@@ -205,10 +205,26 @@
             <field name="arch" type="xml">
                 <form string="Event">
                     <sheet>
+                       <header>
+                        <button type="action"
+                            class="oe_stat_button"
+                            icon='fa-money'
+                            name="%(event_tag_category_view_form_btn)d"
+                            context="{'search_default_journal_id':id}">
+                            <field name="offer_count">
+                            </field>
+                        
+                            
+                        </button>
+                       </header>
+                         
+                        
+                    
+                       
                        <div class="oe_title">
                             <field name="name"/>
                         </div>
-
+                       
                         <group>
                           <notebook>
                            <page string="Properties"> 
@@ -251,5 +267,23 @@
  </record>
 
 
+<record id="event_tag_category_view_form_btn" model="ir.actions.act_window">
+        <field name="name">Property offer</field>
+        <field name="res_model">estate_property_offer</field>
+        <field name="view_mode">list,form</field>
+    </record>
+  <record id="estate_model_offer_view_list" model="ir.ui.view">
+        <field name="name">Estate</field>
+        <field name="model">estate_property_offer</field>
+        <field name="arch" type="xml">
+            <list string="offers">
+                <field name="price"></field>
+                <field name="partner_id">
+                </field>
+                <field name="validity"></field>
+                <field name="date_deadline"></field>
+            </list>
+        </field>
+    </record>  
 
 </odoo>

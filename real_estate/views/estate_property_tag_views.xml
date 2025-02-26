@@ -6,6 +6,7 @@
   </record>
 
   <record id="real_estate_form_views2345" model="ir.ui.view">
+  
         <field name="name">Test</field>
         <field name="model">estate_property_tag</field>
         <field name="arch" type="xml">
