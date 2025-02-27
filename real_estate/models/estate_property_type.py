@@ -10,6 +10,11 @@ class PropertyType(models.Model):
     property_ids = fields.One2many('real_estate', 'property_type_id')
     test_ids = fields.One2many("estate_property_offer", "property_id", string="Tests")
     offer_count = fields.Integer('Offers' ,compute="_compute_countoffer")
+    company_id = fields.Many2one(
+        'res.company', string="Company",
+        required=True, index=True,
+        default=lambda self: self.env.company
+    )
       
     _sql_constraints = [
         ('unique_property_type_name', 'unique(name)', 'The property type name must be unique.')

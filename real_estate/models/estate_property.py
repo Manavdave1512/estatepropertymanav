@@ -61,6 +61,12 @@ class Real(models.Model):
     property_type_id = fields.Many2one("estate_property_type",string="Property Type")
     tag_ids = fields.Many2many("estate_property_tag")
     test_ids = fields.One2many("estate_property_offer", "property_id", string="Tests")
+    company_id = fields.Many2one(
+        'res.company', string="Company",
+        required=True, index=True,
+        default=lambda self: self.env.company
+    )
+
         
     best_price = fields.Integer(string ="Best Offer",compute="_highest",store=True)
 
